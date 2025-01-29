@@ -1,0 +1,9 @@
+# Npm package manager files
+package-lock.json
+package.json
+
+# .vscode files
+/.vscode/
+
+# next.js build output
+.next
