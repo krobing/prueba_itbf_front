@@ -1,5 +1,5 @@
-import { makeAppTheme, overTheme } from './themes'
+import { makeAppTheme } from './themes'
 
 // Final theme variables for app
-const appTheme = makeAppTheme(overTheme)
+const appTheme = makeAppTheme()
 export default appTheme

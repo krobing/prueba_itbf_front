@@ -52,7 +52,8 @@ export default function withTwin(
         config.resolve.fallback.fs = false
       }
 
-      if (typeof nextConfig.webpack === 'function') return nextConfig.webpack(config, options)
+      if (typeof nextConfig.webpack === 'function')
+        return nextConfig.webpack(config, options)
 
       return config
     },

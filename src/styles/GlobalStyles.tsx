@@ -20,7 +20,8 @@ const CustomStyles = createGlobalStyle<CustomStylesProps>`
 
   body {
     -webkit-tap-highlight-color: ${theme`colors.purple.500`};
-    ${tw`antialiased`}
+    ${tw`antialiased min-h-screen bg-gradient-to-r from-cyan-500 to-sky-600 text-gray-900`}
+    
   }
 
   /* animations */

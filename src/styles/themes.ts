@@ -3,20 +3,21 @@ import type { DefaultTheme, ThemeWithFunc } from 'styled-components'
 import { DeepPartial } from 'utility-types'
 import { ObjKeyTypes } from '../../types/utilities'
 
-// Original variables for app styled theme
+// Original theme variables for the app
 const rawOriginalTheme: ThemeWithFunc = {
   colors: {
     alert: '#FB2F3D',
     danger: '#FB2F3D',
     dominant: {
-      DEFAULT: '#FACD34',
-      dark: '#F5A50B',
-      light: '#FBDF00',
+      DEFAULT: '#0476bd',
+      dark: '#03528f',
+      light: '#40a3e6',
     },
     'sub-dominant': {
-      DEFAULT: '#512F8B',
-      light: '#512F8B80',
-      href: '#593990',
+      DEFAULT: '#89b80a',
+      dark: '#6a8c08',
+      light: '#d1e78e',
+      href: '#89b80a',
     },
     alternative: {
       DEFAULT: '#26346F',
@@ -88,26 +89,15 @@ const rawOriginalTheme: ThemeWithFunc = {
 }
 
 // Use variant of themes with css variables
-export const overTheme: DeepPartial<ThemeWithFunc> = {
-  colors: {
-    dominant: {
-      DEFAULT: 'var(--dominant-color)',
-      dark: 'var(--dominant-color-dark)',
-      light: 'var(--dominant-color-ligth)',
-    },
-    'sub-dominant': {
-      DEFAULT: 'var(--sub-dominant-color)',
-      light: 'var(--sub-dominant-color-ligth)',
-      href: 'var(--sub-dominant-color-href)',
-    },
-    alternative: {
-      DEFAULT: 'var(--button-color)',
-      dark: 'var(--button-color-dark)',
-      hover: 'var(--button-color-hover)',
-    },
-  },
-}
+export const overTheme: DeepPartial<ThemeWithFunc> = {}
 
+/**
+ * Deeply spreads an object.
+ *
+ * @param obj - The object to be spread.
+ * @param ext - The object to be spread over `obj`.
+ * @returns A new object with the same structure as `obj`, but with `ext` spread over it.
+ */
 const deepSpread = (
   obj: Record<ObjKeyTypes, any>,
   ext: Record<ObjKeyTypes, any>,
@@ -127,6 +117,14 @@ const deepSpread = (
   ),
 })
 
+/**
+ * Executes functions within an object and replaces them with their return values.
+ * If a value is an object, the function is called recursively.
+ *
+ * @param obj - The object containing values or functions to be executed.
+ * @param origin - The theme object to be passed as an argument to the functions.
+ * @returns A new object with the same structure as `obj`, but with functions replaced by their return values.
+ */
 const execFuncValues = (
   obj: Record<ObjKeyTypes, any>,
   origin: DefaultTheme | ThemeWithFunc,
@@ -149,7 +147,10 @@ const execFuncValues = (
   }, {})
 
 // export original theme
-export const originalTheme = execFuncValues(rawOriginalTheme, rawOriginalTheme) as DefaultTheme
+export const originalTheme = execFuncValues(
+  rawOriginalTheme,
+  rawOriginalTheme,
+) as DefaultTheme
 
 /**
  * Create a new theme over original theme, overwriting its variables
@@ -158,6 +159,11 @@ export const originalTheme = execFuncValues(rawOriginalTheme, rawOriginalTheme) 
  *
  * @return {Object} overwritten theme: DefaultTheme
  */
-export const makeAppTheme = (otherTheme: DeepPartial<ThemeWithFunc> = {}): DefaultTheme => {
-  return deepSpread(originalTheme, execFuncValues(otherTheme, originalTheme)) as DefaultTheme
+export const makeAppTheme = (
+  otherTheme: DeepPartial<ThemeWithFunc> = {},
+): DefaultTheme => {
+  return deepSpread(
+    originalTheme,
+    execFuncValues(otherTheme, originalTheme),
+  ) as DefaultTheme
 }
