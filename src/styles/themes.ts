@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import type { DefaultTheme, ThemeWithFunc } from 'styled-components'
 import { DeepPartial } from 'utility-types'
-import { ObjKeyTypes } from '../../types/utilities'
+import { ObjKeyTypes } from '@/typings/utilities'
 
 // Original theme variables for the app
 const rawOriginalTheme: ThemeWithFunc = {
@@ -9,15 +9,15 @@ const rawOriginalTheme: ThemeWithFunc = {
     alert: '#FB2F3D',
     danger: '#FB2F3D',
     dominant: {
-      DEFAULT: '#0476bd',
-      dark: '#03528f',
-      light: '#40a3e6',
+      DEFAULT: '#00A0BC',
+      dark: '#008BA3',
+      light: '#00B9DA',
     },
     'sub-dominant': {
-      DEFAULT: '#89b80a',
-      dark: '#6a8c08',
-      light: '#d1e78e',
-      href: '#89b80a',
+      DEFAULT: '#97D138',
+      dark: '#81B232',
+      light: '#B0F344',
+      link: '#97D138',
     },
     alternative: {
       DEFAULT: '#26346F',
@@ -61,6 +61,7 @@ const rawOriginalTheme: ThemeWithFunc = {
 
   breakpoints: {
     content: (theme) => theme['content-max-width'],
+    xs: '430px',
     sm: '640px',
     md: '768px',
     lg: '1024px',

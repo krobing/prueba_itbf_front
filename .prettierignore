@@ -7,3 +7,6 @@ package.json
 
 # next.js build output
 .next
+
+# type definitions by TypeScript
+**/types/**/*.ts

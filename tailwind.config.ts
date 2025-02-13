@@ -1,4 +1,5 @@
 import { type Config } from 'tailwindcss'
+import flowbite from 'flowbite-react/tailwind'
 import { makeAppTheme, overTheme } from './src/styles/themes'
 
 const {
@@ -9,7 +10,7 @@ const {
 } = makeAppTheme(overTheme)
 
 export default {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx,html}', flowbite.content()],
   theme: {
     screens: restBreakpoints,
     extend: {
@@ -36,5 +37,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [flowbite.plugin()],
 } satisfies Config

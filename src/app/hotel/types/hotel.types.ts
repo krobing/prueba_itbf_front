@@ -1,0 +1,1 @@
+export interface CreateErrorsResponse { errors: Record<string, string[]> }
