@@ -20,7 +20,7 @@ const apiUrl = process.env.NEXT_PUBLIC_BACKEND_URL
 // Go to https://nextjs.org/docs/app/building-your-application/data-fetching/incremental-static-regeneration
 // to understand the ISR (Incremental Static Regeneration)
 export const revalidate = 60
-export const dynamicParams = true
+export const dynamicParams = false
 
 export async function generateStaticParams() {
   const hotels = await fetch(`${apiUrl}/api/hoteles`, {
