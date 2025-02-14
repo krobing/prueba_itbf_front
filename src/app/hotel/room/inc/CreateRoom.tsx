@@ -137,7 +137,7 @@ export default function CreateRoom({ hotels, typesAccommodations }: CreateRoomPr
 
       <div tw="flex justify-end w-full">
         <SubmitButton type="submit" tw="w-full xs:w-auto">
-          Crear hotel
+          Crear habitación
         </SubmitButton>
       </div>
     </Form>

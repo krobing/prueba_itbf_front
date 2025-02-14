@@ -4,7 +4,7 @@ export default function HotelHomePage() {
   return (
     <>
       <h1 className="text-dominant-light text-center font-semibold">
-        Sistema de gestión Hotelera
+        Sistema De Gestión Hotelera
       </h1>
       <Link
         href="/hotel/browse"

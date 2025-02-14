@@ -11,7 +11,7 @@ export default function HotelRoomPage() {
 
   return (
     <>
-      <h1 className="text-dominant-light">Crear Habitación</h1>
+      <h1 className="text-dominant-light">Crear habitación</h1>
       <Suspense fallback={<PropagateLoader />}>
         <CreateRoom hotels={hotels} typesAccommodations={typesAccommodations} />
       </Suspense>
