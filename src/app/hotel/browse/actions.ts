@@ -10,11 +10,11 @@ export const fetchHotels = async (): Promise<Hotel[]> => {
     cache: 'force-cache',
     next: { revalidate: 60 },
   })
-  const data = await resp.json()
 
   if (!resp.ok) {
     notFound()
   }
 
+  const data = await resp.json()
   return data
 }

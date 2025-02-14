@@ -17,12 +17,12 @@ export const getHotel = async (id: string): Promise<Hotel> => {
   const resp = await fetch(`${apiUrl}/hoteles/${id}`, {
     next: { revalidate: 60, tags: ['hotel'] },
   })
-  const data = await resp.json()
 
   if (!resp.ok) {
     notFound()
   }
 
+  const data = await resp.json()
   return data
 }
 
@@ -31,12 +31,12 @@ export const getHoteles = async (): Promise<Hotel[]> => {
     cache: 'force-cache',
     next: { tags: ['hoteles'] },
   })
-  const data = await resp.json()
 
   if (!resp.ok) {
     notFound()
   }
 
+  const data = await resp.json()
   return data
 }
 
@@ -50,11 +50,11 @@ export const getTypesAccommodations = async (): Promise<GroupedTypeAccommodation
   const resp = await fetch(`${apiUrl}/tipo-acomodaciones`, {
     cache: 'force-cache',
   })
-  const data = await resp.json()
 
   if (!resp.ok) {
     notFound()
   }
 
+  const data = await resp.json()
   return data
 }
