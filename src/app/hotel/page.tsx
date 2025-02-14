@@ -7,10 +7,10 @@ export default function HotelHomePage() {
         Sistema De Gestión Hotelera
       </h1>
       <Link
-        href="/hotel/browse"
+        href="/hotel/create"
         className="m-auto self-center justify-self-center text-white font-semibold bg-dominant hover:bg-dominant-dark rounded-md p-3 shadow-lg border-b-4 border-dominant-dark hover:border-b-0 transition-all duration-75 ease-linear"
       >
-        Consultar Hoteles
+        Crear un hotel
       </Link>
     </>
   )
